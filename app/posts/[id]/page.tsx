@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 
 interface PostDetailPageProps {
-  params: { id: string };
+  readonly params: { readonly id: string };
 }
 
 async function getPostIds(): Promise<string[]> {
