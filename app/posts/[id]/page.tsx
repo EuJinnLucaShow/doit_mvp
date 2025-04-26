@@ -4,6 +4,15 @@ interface PostDetailPageProps {
   params: { id: string };
 }
 
+async function getPostIds(): Promise<string[]> {
+  return ["1", "2", "3"];
+}
+
+export async function generateStaticParams() {
+  const ids = await getPostIds();
+  return ids.map((id) => ({ id }));
+}
+
 export default function PostDetailPage({ params }: PostDetailPageProps) {
   return (
     <Container maxWidth="lg">
