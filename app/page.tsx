@@ -17,7 +17,7 @@ export default function Home() {
         }}
       >
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Configure ThemeProvider (light/dark theme)
+          Made a basic AppBar
         </Typography>
         <Copyright />
       </Box>

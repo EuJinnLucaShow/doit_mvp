@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/theme";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
-import ModeSwitch from "@/components/ModeSwitch";
+import AppBarHeader from "@/components/AppBarHeader";
 
 export const metadata: Metadata = {
   title: "DOiT MVP",
@@ -23,7 +23,7 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <ModeSwitch />
+            <AppBarHeader />
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>

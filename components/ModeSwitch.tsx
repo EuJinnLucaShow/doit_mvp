@@ -21,7 +21,7 @@ export default function ModeSwitch() {
       sx={{
         display: "flex",
         justifyContent: "flex-end",
-        mt: 1,
+        mt: 0,
         p: 1,
       }}
     >
