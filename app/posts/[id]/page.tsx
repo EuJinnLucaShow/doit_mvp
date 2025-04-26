@@ -1,12 +1,12 @@
 import { Box, Container, Typography } from "@mui/material";
 
 interface PageProps {
-  params: {
-    id: string;
+  readonly params: {
+    readonly id: string;
   };
 }
 
-export default function PostDetailPage({ params }: Readonly<PageProps>) {
+export default function PostDetailPage({ params }: PageProps) {
   return (
     <Container maxWidth="lg">
       <Box
