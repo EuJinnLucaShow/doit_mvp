@@ -1,9 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 
 interface PostDetailPageProps {
-  params: {
-    id: string;
-  };
+  params: { id: string };
 }
 
 export default function PostDetailPage({ params }: PostDetailPageProps) {
