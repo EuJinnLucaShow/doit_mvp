@@ -1,10 +1,12 @@
 import { Box, Container, Typography } from "@mui/material";
-import { useRouter } from "next/router";
 
-export default function PostDetailPage() {
-  const router = useRouter();
-  const { id } = router.query;
+interface Props {
+  params: Readonly<{
+    id: string;
+  }>;
+}
 
+export default function PostDetailPage({ params }: Readonly<Props>) {
   return (
     <Container maxWidth="lg">
       <Box
@@ -20,7 +22,7 @@ export default function PostDetailPage() {
           Деталі посту
         </Typography>
         <Typography variant="subtitle1" component="h2">
-          ID: {id}
+          ID: {params.id}
         </Typography>
       </Box>
     </Container>
