@@ -12,8 +12,8 @@ export default function Copyright() {
       }}
     >
       {"Copyright © "}
-      <MuiLink color="inherit" href="https://mui.com/">
-        Website
+      <MuiLink color="inherit" href="https://doit-mvp.vercel.app/">
+        DOiT MVP
       </MuiLink>{" "}
       {new Date().getFullYear()}.
     </Typography>
