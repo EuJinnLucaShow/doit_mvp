@@ -1,6 +1,12 @@
 import { Box, Container, Typography } from "@mui/material";
 
-export default function PostDetailPage({ params }: { params: { id: string } }) {
+interface PostDetailPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function PostDetailPage({ params }: PostDetailPageProps) {
   return (
     <Container maxWidth="lg">
       <Box
