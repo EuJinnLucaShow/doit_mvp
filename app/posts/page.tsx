@@ -1,6 +1,15 @@
-import { Box, Container, Typography } from "@mui/material";
+"use client";
+
+import PostCard from "@/components/PostCard";
+import { useGetPostsQuery } from "@/lib/features/posts/postsSlice";
+import { Box, Container, Grid } from "@mui/material";
 
 export default function PostsPage() {
+  const { data: posts, isLoading, error } = useGetPostsQuery();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading posts</div>;
+
   return (
     <Container maxWidth="lg">
       <Box
@@ -12,9 +21,13 @@ export default function PostsPage() {
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" component="h1" sx={{ mb: 4 }}>
-          Усі пости
-        </Typography>
+        <Grid container spacing={2}>
+          {posts?.map((post) => (
+            <Grid key={post.id}>
+              <PostCard post={post} />
+            </Grid>
+          ))}
+        </Grid>
       </Box>
     </Container>
   );

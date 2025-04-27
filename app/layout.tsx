@@ -9,7 +9,7 @@ import AppBarHeader from "@/components/AppBarHeader";
 
 export const metadata: Metadata = {
   title: "DOiT MVP",
-  description: "DOiT - FrontEnd test task",
+  description: "DOiT - FrontEnd",
 };
 
 export default function RootLayout({
