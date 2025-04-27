@@ -19,7 +19,7 @@ interface PostCardProps {
 
 export default function PostCard({ post }: Readonly<PostCardProps>) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 370 }}>
       <CardHeader
         avatar={<Avatar aria-label="recipe">{post.userId}</Avatar>}
         action={

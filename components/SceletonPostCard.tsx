@@ -9,7 +9,7 @@ import React from "react";
 
 export default function SceletonPostCard() {
   return (
-    <Card style={{ width: 345 }}>
+    <Card style={{ width: 370 }}>
       <CardHeader
         avatar={
           <Skeleton
