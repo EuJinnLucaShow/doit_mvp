@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import theme from "@/theme";
+import theme from "@/app/theme";
+import StoreProvider from "@/app/StoreProvider";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import AppBarHeader from "@/components/AppBarHeader";
 
@@ -22,9 +23,11 @@ export default function RootLayout({
         <InitColorSchemeScript attribute="class" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <AppBarHeader />
-            {children}
+            <StoreProvider>
+              <CssBaseline />
+              <AppBarHeader />
+              {children}
+            </StoreProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
