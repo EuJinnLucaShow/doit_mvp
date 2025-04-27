@@ -37,7 +37,7 @@ export default function Home() {
             id="panel1-header"
           >
             <Typography variant="h5" gutterBottom>
-              День 1 — Старт проєкту і базова архітектура
+              📌 День 1 — Старт проєкту і базова архітектура
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -67,7 +67,7 @@ export default function Home() {
             id="panel2-header"
           >
             <Typography variant="h5" gutterBottom>
-              День 2 — Redux Toolkit і перший запит (отримання постів)
+              📌 День 2 — Redux Toolkit і перший запит (отримання постів)
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
