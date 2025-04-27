@@ -1,13 +1,13 @@
 "use client";
 
 import PostCard from "@/components/PostCard";
+import SceletonPostCard from "@/components/SceletonPostCard";
 import { useGetPostsQuery } from "@/lib/features/posts/postsSlice";
 import { Box, Container, Grid } from "@mui/material";
 
 export default function PostsPage() {
   const { data: posts, isLoading, error } = useGetPostsQuery();
 
-  if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading posts</div>;
 
   return (
@@ -21,13 +21,23 @@ export default function PostsPage() {
           alignItems: "center",
         }}
       >
-        <Grid container spacing={2}>
-          {posts?.map((post) => (
-            <Grid key={post.id}>
-              <PostCard post={post} />
-            </Grid>
-          ))}
-        </Grid>
+        {isLoading ? (
+          <Grid container spacing={2}>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Grid key={index}>
+                <SceletonPostCard />
+              </Grid>
+            ))}
+          </Grid>
+        ) : (
+          <Grid container spacing={2}>
+            {posts?.map((post) => (
+              <Grid key={post.id}>
+                <PostCard post={post} />
+              </Grid>
+            ))}
+          </Grid>
+        )}
       </Box>
     </Container>
   );

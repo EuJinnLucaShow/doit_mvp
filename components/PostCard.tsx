@@ -42,7 +42,7 @@ export default function PostCard({ post }: Readonly<PostCardProps>) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <IconButton aria-label="show more">
+        <IconButton aria-label="show more" style={{ marginLeft: "auto" }}>
           <ArrowForwardIcon />
         </IconButton>
       </CardActions>
