@@ -8,6 +8,7 @@ export default function Copyright() {
       variant="body2"
       align="center"
       sx={{
+        my: 7,
         color: "text.secondary",
       }}
     >
