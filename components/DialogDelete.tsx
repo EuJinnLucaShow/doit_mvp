@@ -47,18 +47,16 @@ export default function DialogDelete({
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-      <DialogTitle id="alert-dialog-title">
-        {"Are you sure you want to delete this post?"}
-      </DialogTitle>
+      <DialogTitle id="alert-dialog-title">{"Confirm"}</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           Are you sure you want to delete this post?
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Disagree</Button>
+        <Button onClick={handleClose}>CANCEL</Button>
         <Button loading={isDeleting} onClick={handleDelete} autoFocus>
-          Agree
+          DLELETE
         </Button>
       </DialogActions>
     </Dialog>
