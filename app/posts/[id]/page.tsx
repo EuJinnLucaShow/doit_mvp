@@ -4,7 +4,8 @@ import { use } from "react";
 import { useGetPostByIdQuery } from "@/lib/features/posts/postsSlice";
 import PostDetailsCard from "@/components/PostDetailsCard";
 import { Box, Container } from "@mui/material";
-import SceletonPostDetailsCard from "@/components/SceletonPostDetailsCard";
+
+import SpinningLoader from "@/components/SpinningLoader";
 
 export default function PostDetailsPage({
   params,
@@ -28,7 +29,7 @@ export default function PostDetailsPage({
         }}
       >
         {isLoading ? (
-          <SceletonPostDetailsCard />
+          <SpinningLoader />
         ) : (
           post && <PostDetailsCard post={post} />
         )}

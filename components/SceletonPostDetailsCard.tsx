@@ -29,7 +29,7 @@ export default function SceletonPostDetailsCard() {
         subheader={<Skeleton animation="wave" height={20} width="80%" />}
       />
       <CardContent>
-        <Skeleton variant="rounded" animation="wave" height={85} width="100%" />
+        <Skeleton variant="rounded" animation="wave" height={75} width="100%" />
       </CardContent>
       <CardActions>
         <Skeleton variant="rounded" width={"30%"} height={40} />
