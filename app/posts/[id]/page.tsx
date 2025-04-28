@@ -4,6 +4,7 @@ import { use } from "react";
 import { useGetPostByIdQuery } from "@/lib/features/posts/postsSlice";
 import PostDetailsCard from "@/components/PostDetailsCard";
 import { Box, Container } from "@mui/material";
+import SceletonPostDetailsCard from "@/components/SceletonPostDetailsCard";
 
 export default function PostDetailsPage({
   params,
@@ -13,8 +14,7 @@ export default function PostDetailsPage({
   const { id } = use(params);
   const { data: post, isLoading, error } = useGetPostByIdQuery(id);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error || !post) return <div>Post not found</div>;
+  if (error) return <div>Post not found</div>;
 
   return (
     <Container maxWidth="lg">
@@ -27,7 +27,11 @@ export default function PostDetailsPage({
           alignItems: "center",
         }}
       >
-        <PostDetailsCard post={post} />
+        {isLoading ? (
+          <SceletonPostDetailsCard />
+        ) : (
+          post && <PostDetailsCard post={post} />
+        )}
       </Box>
     </Container>
   );

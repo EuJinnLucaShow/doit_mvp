@@ -17,7 +17,7 @@ interface PostCardProps {
 
 export default function PostDetailsCard({ post }: Readonly<PostCardProps>) {
   return (
-    <Card sx={{ width: "auto" }}>
+    <Card sx={{ width: "100%" }}>
       <CardHeader
         avatar={<Avatar aria-label="recipe">{post.userId}</Avatar>}
         title={post.title}
