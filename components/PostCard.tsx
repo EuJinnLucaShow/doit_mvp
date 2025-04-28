@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
@@ -42,7 +43,12 @@ export default function PostCard({ post }: Readonly<PostCardProps>) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <IconButton aria-label="show more" style={{ marginLeft: "auto" }}>
+        <IconButton
+          component={Link}
+          href={`/posts/${post.id}`}
+          aria-label="show more"
+          style={{ marginLeft: "auto" }}
+        >
           <ArrowForwardIcon />
         </IconButton>
       </CardActions>
