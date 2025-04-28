@@ -6,6 +6,7 @@ import theme from "@/app/theme";
 import StoreProvider from "@/app/StoreProvider";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import AppBarHeader from "@/components/AppBarHeader";
+import Copyright from "@/components/Copyright";
 
 export const metadata: Metadata = {
   title: "DOiT MVP",
@@ -27,6 +28,7 @@ export default function RootLayout({
               <CssBaseline />
               <AppBarHeader />
               {children}
+              <Copyright />
             </StoreProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
