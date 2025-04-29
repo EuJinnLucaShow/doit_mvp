@@ -137,11 +137,13 @@ export default function StepperCreatePost() {
                     </Button>
                   ) : (
                     <Button
-                      disabled
                       variant="contained"
-                      endIcon={<ArrowForwardIosIcon />}
+                      endIcon={<SaveIcon />}
+                      onClick={() =>
+                        document.querySelector("form")?.requestSubmit()
+                      }
                     >
-                      Далі
+                      Зберегти
                     </Button>
                   )}
                 </Box>
@@ -156,15 +158,8 @@ export default function StepperCreatePost() {
                   </DialogContent>
                   <DialogActions>
                     <Button onClick={handleBack}>Редагувати</Button>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      endIcon={<SaveIcon />}
-                      onClick={() =>
-                        document.querySelector("form")?.requestSubmit()
-                      }
-                    >
-                      Зберегти
+                    <Button variant="contained" onClick={handleNext}>
+                      Підтвердити
                     </Button>
                   </DialogActions>
                 </Dialog>
