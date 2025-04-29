@@ -4,7 +4,6 @@ import { use } from "react";
 import { useGetPostByIdQuery } from "@/lib/features/posts/postsSlice";
 import PostDetailsCard from "@/components/PostDetailsCard";
 import { Box, Container } from "@mui/material";
-
 import SpinningLoader from "@/components/SpinningLoader";
 
 export default function PostDetailsPage({
