@@ -7,6 +7,7 @@ import StoreProvider from "@/app/StoreProvider";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import AppBarHeader from "@/components/AppBarHeader";
 import Copyright from "@/components/Copyright";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "DOiT MVP",
