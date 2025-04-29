@@ -56,7 +56,7 @@ export default function StepperCreatePost() {
           (activeStep === 1 && (!values.body || !!errors.body));
 
         return (
-          <Form style={{ width: "50%" }}>
+          <Form style={{ width: "clamp(300px, 100%, 800px)" }}>
             <Box sx={{ width: "100%" }}>
               <Stepper activeStep={activeStep} alternativeLabel>
                 {steps.map((label) => (
