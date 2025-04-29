@@ -11,7 +11,7 @@ export default function SpeedDialPostCreate() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleLink = () => {
+  const handleCreatePostClick = () => {
     router.push("/posts/create");
   };
 
@@ -32,7 +32,7 @@ export default function SpeedDialPostCreate() {
             title: "Створити пост",
           },
         }}
-        onClick={handleLink}
+        onClick={handleCreatePostClick}
       />
     </SpeedDial>
   );
