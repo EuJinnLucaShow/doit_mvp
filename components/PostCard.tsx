@@ -29,7 +29,7 @@ export default function PostCard({ post }: Readonly<PostCardProps>) {
           </IconButton>
         }
         title={post.title}
-        subheader={post.userId}
+        subheader={`User ${post.userId}`}
       />
       <CardContent>
         <Typography variant="body2" sx={{ color: "text.secondary" }}>
