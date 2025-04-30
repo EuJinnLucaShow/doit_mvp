@@ -7,7 +7,7 @@
 1. Клонувати репозиторій:
 ```bash
 git clone https://github.com/EuJinnLucaShow/doit_mvp.git
-cd doit-blog
+cd doit_mvp
 npm install
 ```
 ## Getting Started
