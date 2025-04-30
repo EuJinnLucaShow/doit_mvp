@@ -1,7 +1,7 @@
 "use client";
 
 import { use } from "react";
-import { useGetPostByIdQuery } from "@/lib/features/posts/postsSlice";
+import { useGetPostByIdQuery } from "@/lib/services/postsApi";
 import PostDetailsCard from "@/components/PostDetailsCard";
 import { Box, Container } from "@mui/material";
 import SpinningLoader from "@/components/SpinningLoader";

@@ -4,7 +4,7 @@ import PostCard from "@/components/PostCard";
 import SceletonPostCard from "@/components/SceletonPostCard";
 import Search from "@/components/Search";
 import SpeedDialPostCreate from "@/components/SpeedDialPostCreate";
-import { useGetPostsQuery } from "@/lib/features/posts/postsSlice";
+import { useGetPostsQuery } from "@/lib/services/postsApi";
 import { Box, Container, Grid } from "@mui/material";
 
 export default function PostsPage() {

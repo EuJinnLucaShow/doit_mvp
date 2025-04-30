@@ -5,7 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { useDeletePostMutation } from "@/lib/features/posts/postsSlice";
+import { useDeletePostMutation } from "@/lib/services/postsApi";
 import { useRouter } from "next/navigation";
 
 interface DialogProps {

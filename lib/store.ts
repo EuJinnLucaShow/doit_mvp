@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { postsApi } from "@/lib/features/posts/postsSlice";
+import { postsApi } from "@/lib/services/postsApi";
 
 export function makeStore() {
   return configureStore({
