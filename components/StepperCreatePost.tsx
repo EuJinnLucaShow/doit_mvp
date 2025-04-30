@@ -24,7 +24,7 @@ import SubjectIcon from "@mui/icons-material/Subject";
 import SaveIcon from "@mui/icons-material/Save";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useCreatePostMutation } from "@/lib/services/postsApi";
-import { Post } from "@/lib/types/post";
+import { Post } from "@/types/post";
 
 const steps = ["Заголовок", "Тіло", "Попередній перегляд"];
 

@@ -7,7 +7,7 @@ import Search from "@/components/Search";
 import SpeedDialPostCreate from "@/components/SpeedDialPostCreate";
 import { useGetPostsQuery } from "@/lib/services/postsApi";
 import { Box, Container, Grid } from "@mui/material";
-import { Post } from "@/lib/types/post";
+import { Post } from "@/types/post";
 
 export default function PostsPage() {
   const { data: posts, isLoading, error } = useGetPostsQuery();
@@ -38,8 +38,8 @@ export default function PostsPage() {
               justifyContent: "center",
             }}
           >
-            {Array.from({ length: 6 }).map((_, index) => (
-              <Grid key={index}>
+            {Array.from({ length: 6 }, (_, i) => i).map((item, index) => (
+              <Grid key={item + index}>
                 <SceletonPostCard />
               </Grid>
             ))}

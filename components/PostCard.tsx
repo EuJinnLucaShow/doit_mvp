@@ -12,7 +12,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Post } from "@/lib/types/post";
+import { Post } from "@/types/post";
 
 interface PostCardProps {
   post: Post;

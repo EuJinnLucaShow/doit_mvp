@@ -10,11 +10,7 @@ interface AccordionProps {
   item: {
     id: number;
     title: string;
-    list1: string;
-    list2: string;
-    list3: string;
-    list4: string;
-    list5: string;
+    list: string[];
   };
   defaultExpanded?: boolean;
 }
@@ -36,21 +32,11 @@ export default function AccordionUsage({
       </AccordionSummary>
       <AccordionDetails>
         <List sx={{ width: "100%" }}>
-          <ListItem>
-            <ListItemText primary={item.list1} />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary={item.list2} />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary={item.list3} />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary={item.list4} />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary={item.list5} />
-          </ListItem>
+          {item.list.map((item, index) => (
+            <ListItem key={item.length + index}>
+              <ListItemText primary={item} />
+            </ListItem>
+          ))}
         </List>
       </AccordionDetails>
     </Accordion>

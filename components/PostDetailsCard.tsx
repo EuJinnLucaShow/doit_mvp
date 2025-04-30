@@ -8,7 +8,7 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Post } from "@/lib/types/post";
+import { Post } from "@/types/post";
 import { Button } from "@mui/material";
 import DialogDelete from "./DialogDelete";
 
