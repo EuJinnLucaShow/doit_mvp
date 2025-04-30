@@ -29,7 +29,7 @@ export default function PostDetailsCard({ post }: Readonly<PostCardProps>) {
         <CardHeader
           avatar={<Avatar aria-label="recipe">{post.userId}</Avatar>}
           title={post.title}
-          subheader={post.userId}
+          subheader={`User ${post.userId}`}
         />
         <CardContent>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
