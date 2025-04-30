@@ -1,14 +1,21 @@
 "use client";
 
+import * as React from "react";
 import PostCard from "@/components/PostCard";
 import SceletonPostCard from "@/components/SceletonPostCard";
 import Search from "@/components/Search";
 import SpeedDialPostCreate from "@/components/SpeedDialPostCreate";
 import { useGetPostsQuery } from "@/lib/services/postsApi";
 import { Box, Container, Grid } from "@mui/material";
+import { Post } from "@/lib/types/post";
 
 export default function PostsPage() {
   const { data: posts, isLoading, error } = useGetPostsQuery();
+  const [filteredPosts, setFilteredPosts] = React.useState<Post[]>([]);
+
+  React.useEffect(() => {
+    if (posts) setFilteredPosts(posts);
+  }, [posts]);
 
   if (error) return <div>Error loading posts</div>;
 
@@ -42,11 +49,11 @@ export default function PostsPage() {
             container
             spacing={2}
             sx={{
-              justifyContent: "center",
+              width: "100%",
             }}
           >
-            <Search />
-            {posts?.map((post) => (
+            <Search posts={posts || []} setFilteredPosts={setFilteredPosts} />
+            {filteredPosts?.map((post) => (
               <Grid key={post.id}>
                 <PostCard post={post} />
               </Grid>
