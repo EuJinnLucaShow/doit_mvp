@@ -23,6 +23,8 @@ import TitleIcon from "@mui/icons-material/Title";
 import SubjectIcon from "@mui/icons-material/Subject";
 import SaveIcon from "@mui/icons-material/Save";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { useCreatePostMutation } from "@/lib/features/posts/postsSlice";
+import { Post } from "@/lib/types/post";
 
 const steps = ["Заголовок", "Тіло", "Попередній перегляд"];
 
@@ -33,22 +35,36 @@ const validationSchema = Yup.object({
 
 export default function StepperCreatePost() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [isDeleting, setIsDeleting] = React.useState(false);
   const [openSnackbar, setOpenSnackbar] = React.useState(false);
+
+  const [createPost] = useCreatePostMutation();
 
   const handleNext = () => setActiveStep((prev) => prev + 1);
   const handleBack = () => setActiveStep((prev) => prev - 1);
   const handleReset = () => setActiveStep(0);
 
+  const handleSubmitForm = async (
+    values: Partial<Post>,
+    { resetForm }: { resetForm: () => void }
+  ) => {
+    try {
+      setIsDeleting(true);
+      await createPost(values).unwrap();
+      setIsDeleting(false);
+      setOpenSnackbar(true);
+      resetForm();
+      handleReset();
+    } catch (err) {
+      console.error("Помилка при створенні поста", err);
+    }
+  };
+
   return (
     <Formik
       initialValues={{ title: "", body: "" }}
       validationSchema={validationSchema}
-      onSubmit={(values, { resetForm }) => {
-        console.log("Post submitted:", values);
-        setOpenSnackbar(true);
-        resetForm();
-        handleReset();
-      }}
+      onSubmit={handleSubmitForm}
     >
       {({ values, errors, touched, handleChange, handleBlur }) => {
         const isNextDisabled =
@@ -126,7 +142,7 @@ export default function StepperCreatePost() {
                   </Button>
                   <Box sx={{ flex: "1 1 auto" }} />
 
-                  {activeStep < steps.length - 1 ? (
+                  {activeStep < steps.length ? (
                     <Button
                       disabled={isNextDisabled}
                       variant="contained"
@@ -137,11 +153,10 @@ export default function StepperCreatePost() {
                     </Button>
                   ) : (
                     <Button
+                      type="submit"
                       variant="contained"
                       endIcon={<SaveIcon />}
-                      onClick={() =>
-                        document.querySelector("form")?.requestSubmit()
-                      }
+                      loading={isDeleting}
                     >
                       Зберегти
                     </Button>
